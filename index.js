@@ -18,7 +18,7 @@ mongoose.connect("mongodb+srv://ritesh058:ritesh058@mflix-dkogv.mongodb.net/car-
 
 const userRoutes  = require('./routes/user.js');
 
-let port = 4000;
+let port = process.env.PORT || 3000;
 
 app.use(cookieParser())
 app.use(bodyParser.json());
@@ -33,15 +33,6 @@ app.use((req, res, next)=> {
 });
 
 app.use(userRoutes);
-
-
-
-
-
-
-
-
-
 
 app.listen(port, () => {
     console.log(`Server Running on ${port}`)
