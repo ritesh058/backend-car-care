@@ -6,7 +6,8 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost/car-care',{ useNewUrlParser: true,useUnifiedTopology: true },(error,data)=>{
+
+mongoose.connect("mongodb+srv://ritesh058:ritesh058@mflix-dkogv.mongodb.net/car-care?retryWrites=true&w=majority",{ useNewUrlParser: true,useUnifiedTopology: true },(error,data)=>{
     if(error){
         console.log("There is an error while connecting to database")
     }
@@ -32,6 +33,8 @@ app.use((req, res, next)=> {
 });
 
 app.use(userRoutes);
+
+
 
 
 
